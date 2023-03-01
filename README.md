@@ -1,4 +1,4 @@
-# Проект по автоматизированному тестированию сайта "IBS"
+# Проект по автоматизированному тестированию сайта "Sberhealth"
 
 <p align="center">
 <img title="Allure Overview" src="images/screenshots/SberHealthMainPage.png">
