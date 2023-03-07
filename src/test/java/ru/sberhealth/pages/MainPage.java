@@ -32,30 +32,6 @@ public class MainPage {
                 "?utm_source=main_sberhealth&utm_medium=internal&utm_campaign=footer#head"));
     }
 
-    public void clickOnCheckVacanciesButton() {
-        $$(".block-head__buttons .app-button ").findBy(text("Посмотреть вакансии")).click();
-    }
-
-    public void checkVacanciesHeader() {
-        $(".block-vacancy h2").shouldHave(text("Вакансии"));
-    }
-
-    public void clickOnDropDownMenuVacancies() {
-        $(".app-accordion__button").click();
-    }
-
-    public void checkDropDownMenuVacanciesAppear() {
-        $(".vacancy-accordion--open").shouldBe(visible);
-    }
-
-    public void clickOnAQAVacancy(String vacancy) {
-        $$(".app-accordion__content ul li").findBy(text(vacancy)).click();
-    }
-
-    public void checkPageHasAQAVacancy(String vacancy) {
-        $(".container-with-aside__main h1").shouldHave(text(vacancy));
-    }
-
     public void clickOnContactsButton() {
         $(".the-footer__content").$(byText("Контакты")).click();
     }
@@ -79,19 +55,6 @@ public class MainPage {
         $$(".the-header__links a").findBy(text("Онлайн-консультации")).click();
     }
 
-    public void checkOnlineConsultationHeader() {
-        $("[data-testid=howto-video-block-wrapper]")
-                .shouldHave(text("Узнайте как проходят онлайн-консультации"));
-    }
-
-    public void clickOnOnlineConsultationVideo() {
-        $("[data-testid=howto-video-block-wrapper]").$(byText("Смотреть видео")).click();
-    }
-
-    public void videoShouldBeVisible() {
-        $("[data-testid=modal-overlay]").shouldBe(visible);
-    }
-
     public void clickOnVKIcon() {
         $$(".the-footer__socials a").findBy(href("https://vk.com/sber.health")).click();
     }
@@ -108,17 +71,5 @@ public class MainPage {
 
     public void checkDiagnosticsUrl(String DiagnosticsUrl) {
         webdriver().shouldHave(url(DiagnosticsUrl));
-    }
-
-    public void clickOnAllDiagnosticsButton() {
-        $("#chosenDiagnostic").click();
-    }
-
-    public void clickOnMRILink() {
-        $$("#spec-list ul li a").findBy(text("МРТ (магнитно-резонансная томография)")).click();
-    }
-
-    public void checkMRIPageHeader() {
-        $(".diagnoctica-seo-header h1").shouldHave(text("МРТ (магнитно-резонансная томография) в Москве:"));
     }
 }

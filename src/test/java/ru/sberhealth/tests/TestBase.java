@@ -8,13 +8,20 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.sberhealth.helpers.Attach;
+import ru.sberhealth.pages.AQAVacancyPage;
+import ru.sberhealth.pages.DiagnosticsPage;
 import ru.sberhealth.pages.MainPage;
+import ru.sberhealth.pages.OnlineConsultationPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
     MainPage mainPage = new MainPage();
+    OnlineConsultationPage onlineConsultationPage = new OnlineConsultationPage();
+    AQAVacancyPage AQAVacancyPage  = new AQAVacancyPage ();
+    DiagnosticsPage diagnosticsPage = new DiagnosticsPage();
 
     @BeforeAll
     static void beforeAll() {
@@ -33,6 +40,11 @@ public class TestBase {
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+
+    @BeforeEach
+    void setUp() {
+        open("https://sberhealth.ru/");
     }
 
     @AfterEach
